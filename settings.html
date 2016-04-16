@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="site.css" type="text/css">
+     <link rel="stylesheet" href="\node_modules\bootstrap\dist\css\bootstrap.min.css" type="text/css">
+       <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+     <script src="/node_modules/angular/angular.js"></script>
+      <script src="/node_modules/angular-animate/angular-animate.js"></script>
+      <script src="/node_modules/angular-aria/angular-aria.js"></script>
+      <script src="/node_modules/angular-messages/angular-messages.js"></script>
+      <script src="/node_modules/angular-material/angular-material.js"></script>
+      <script type="text/javascript">    
+         angular.module('firstApplication', ['ngMaterial']);
+      </script>
+<title>Page Title</title>
+</head>
+<body ng-app="firstApplication">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        Simon's Bike Progress'
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="./index.html">Home</a></li>
+      <li class="active"><a>Settings</a></li>
+    </ul>
+  </div>
+</nav>
+<form name="userForm" id="settings-form">
+     <div layout-gt-xs="row">
+<md-input-container>
+        <label>Saving up for</label>
+        <input ng-model="user.savingFor">
+</md-input-container>
+     </div>
+     <div layout-gt-xs="row">
+<md-input-container>
+        <label>Cost</label>
+        <input ng-model="user.Cost">
+</md-input-container>
+
+     </div>
+     <div layout-gt-xs="row">
+<md-input-container>
+        <label>Due date</label>
+        <input ng-model="user.dueDate">
+</md-input-container>
+     </div>
+
+     <div layout-gt-xs="row">
+<md-input-container>
+        <label>Days not cycling</label>
+        <input ng-model="user.dueDate">
+</md-input-container>
+     </div>
+
+     <div layout-gt-xs="row">
+<md-button  id="settings-form-md-button" md-colors="background: Teal" class="md-primary md-raised" ng-click="showAlert($event)" >Save</md-button>
+<row>
+</form>
+
+</body>
+</html>

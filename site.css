@@ -1,0 +1,19 @@
+body {
+    background-color: 	#303030 !important;
+}
+#settings{
+    align-items: center;
+    align-content: center;
+}
+
+#settings-form{
+    background-color: mintcream !important;
+    width: 250px;
+    padding: 20px;
+    align-content: center;
+    margin: auto;
+}
+
+#settings-form-md-button {
+    margin: auto !important;
+}
