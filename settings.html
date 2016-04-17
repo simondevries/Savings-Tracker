@@ -7,19 +7,16 @@
     <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/settingsRepo.js"></script>
+
     <script src="/settingsCtrl.js"></script>
-    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+     <script src="/node_modules/angular-animate/angular-animate.js"></script>
     <script src="/node_modules/angular-aria/angular-aria.js"></script>
     <script src="/node_modules/angular-messages/angular-messages.js"></script>
     <script src="/node_modules/angular-material/angular-material.js"></script>
     <title>Page Title</title>
-</head>
+</head> 
 
 <body ng-app="firstApplication" ng-controller="settingsCtrl as settings">
-    {{settingsCtrl.savingFor}}
-    <script type="text/javascript">
-        settings.setUp();
-    </script>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -37,29 +34,38 @@
         <div layout-gt-xs="row">
             <md-input-container>
                 <label>Saving up for</label>
-                <input ng-model="settingsCtrl.savingFor">
+                <input ng-model="savingUpFor">
             </md-input-container>
         </div>
         <div layout-gt-xs="row">
             <md-input-container>
                 <label>Cost</label>
-                <input ng-model="settingsCtrl.Cost">
+                <input ng-model="cost">
             </md-input-container>
 
         </div>
+        
+        <div layout-gt-xs="row">
+            <md-input-container>
+                <label>Start date</label>
+                <input ng-model="startDate">
+            </md-input-container>
+        </div>
+        
         <div layout-gt-xs="row">
             <md-input-container>
                 <label>Due date</label>
-                <input ng-model="settingsCtrl.dueDate">
+                <input ng-model="dueDate">
             </md-input-container>
         </div>
 
         <div layout-gt-xs="row">
             <md-input-container>
-                <label>Days not cycling</label>
-                <input ng-model="settingsCtrl.dueDate">
+                <label>Days a week cycling</label>
+                <input ng-model="daysCyclingAWeek">
             </md-input-container>
         </div>
+        
 
         <div layout-gt-xs="row">
             <md-button ng-click="showConfirm()" id="settings-form-md-button" class="md-primary md-raised" ng-click="showAlert($event)">Save</md-button>
