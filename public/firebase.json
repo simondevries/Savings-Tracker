@@ -1,0 +1,9 @@
+{
+  "firebase": "savings-tracker",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*"
+    
+  ]
+}

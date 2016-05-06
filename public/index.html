@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./site.css" type="text/css">
+    <link rel="stylesheet" href="\node_modules\bootstrap\dist\css\bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="/node_modules/angular-messages/angular-messages.js"></script>
+    <script src="/node_modules/angular-material/angular-material.js"></script>
+   <script src="/node_modules/chartist-js-develop/chartist.min.js"></script>
+    <link rel="stylesheet" href="/node_modules/chartist-js-develop/chartist.min.css"></script>
+     <script src="/homeCtrl.js"></script>
+
+    <title>Savings tracker</title>
+</head>
+
+<body ng-app="firstApplication" ng-controller="homeCtrl as ctrl">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+        Simon's Bike Progress
+      </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="./settings.html">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+
+    <form name="userForm" class="body-template" id="home-main">
+        <h1>Saving up for {{savingUpFor}}</h1>
+      
+        <i>You have saved</i> 
+        <br>
+            <h2>${{daysToEnd * 11 - (11*missedRides)}}</h2>
+        </br>
+        <div class="ct-chart .ct-square ct-golden-section"></div>
+        </br>
+        </br>
+        </br>
+        <div id="home-buttons">
+            <md-button ng-click="calculateDayToEnd()" id="settings-form-md-button" class="md-primary md-raised">Refresh</md-button>
+            <md-button ng-click="addMissedRide()" id="settings-form-md-button" class="md-primary md-raised">Add missed ride</md-button>
+            <md-button ng-click="resetMissedRides()" id="settings-form-md-button" class="md-primary md-raised">Reset missed rides</md-button>
+        </div>
+    </form>
+</body>
+
+</html>
