@@ -52,19 +52,7 @@ angular.module('firstApplication', ['ngMaterial'])
                 return count;
             }
 
-            $scope.resetMissedRides = function (ev) {
-                var confirm = $mdDialog.confirm()
-                    .title('Clear?')
-                    .textContent('Are you sure you want to clear your savings????')
-                    .ariaLabel('clear')
-                    .targetEvent(ev)
-                    .ok('Yes')
-                    .cancel('No');
-                $mdDialog.show(confirm).then(function () {
-                    $scope.missedRides = 0;
-                    $scope.updateMissedRide()
-                });
-            }
+            
 
             $scope.addMissedRide = function () {
                 $scope.missedRides++;

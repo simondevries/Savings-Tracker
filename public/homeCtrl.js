@@ -6,8 +6,10 @@ angular.module('firstApplication', ['ngMaterial'])
             $scope.daysLeft = "";
             $scope.rides = "";
             $scope.daysToEnd = "";
-
+            $scope.showAddExpense = true;
             $scope.missedRides = 0;
+            $scope.expense = 0;
+            $scope.totalExpense = 0;
 
             $scope.savingUpFor = "";
             $scope.cost = "";
@@ -34,6 +36,10 @@ angular.module('firstApplication', ['ngMaterial'])
                     });
 
 
+                $http.get("https://savings-tracker.firebaseio.com/totalExpense.json")
+                    .then(function (response) {
+                        $scope.totalExpense = response.data.totalExpense
+                    });
             };
             $scope.calculateDayToEnd = function () {
                 var dae = Date.parse($scope.startDate);
@@ -52,6 +58,20 @@ angular.module('firstApplication', ['ngMaterial'])
                 return count;
             }
 
+            $scope.addExpense = function () {
+                var a = $scope.expense;
+                var b =  $scope.totalExpense;
+                var data =
+                    {
+                        totalExpense: (parseInt(a) + parseInt(b))
+                    };
+
+                $http.put("https://savings-tracker.firebaseio.com/totalExpense.json",
+                    data);
+                $scope.expense = 0;
+            }
+
+
             $scope.resetMissedRides = function (ev) {
                 var confirm = $mdDialog.confirm()
                     .title('Clear?')
@@ -67,7 +87,6 @@ angular.module('firstApplication', ['ngMaterial'])
             }
 
             $scope.addMissedRide = function () {
-                $scope.missedRides++;
                 $scope.updateMissedRide();
             }
 
@@ -89,6 +108,8 @@ angular.module('firstApplication', ['ngMaterial'])
                             toPush += $scope.graphArray[index - 1];
                         }
                         toPush += 11;
+                        
+                        
                         $scope.graphArray.push(toPush)
                     }
                     $scope.loadGraph();

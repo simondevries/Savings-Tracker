@@ -40,17 +40,21 @@
       
         <i>You have saved</i> 
         <br>
-            <h2>${{daysToEnd * 11 - (11*missedRides)}}</h2>
+            <h2>${{daysToEnd * 11 - (11*missedRides) - totalExpense}}</h2>
         </br>
         <div class="ct-chart .ct-square ct-golden-section"></div>
         </br>
         </br>
         </br>
         <div id="home-buttons">
-            <md-button ng-click="calculateDayToEnd()" id="settings-form-md-button" class="md-primary md-raised">Refresh</md-button>
             <md-button ng-click="addMissedRide()" id="settings-form-md-button" class="md-primary md-raised">Add missed ride</md-button>
             <md-button ng-click="resetMissedRides()" id="settings-form-md-button" class="md-primary md-raised">Reset missed rides</md-button>
-        </div>
+      <row><md-input-container class="expense-text-box">
+        <label>Expeses</label>
+        <input ng-model="expense">
+      </md-input-container>
+     <md-button ng-click="addExpense()" id="settings-form-md-button" class="md-primary md-raised">Add expense</md-button>
+        </row></div>
     </form>
 </body>
 
